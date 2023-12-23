@@ -101,7 +101,13 @@
         }
 
         // Redirect to the signup page with user details
-        window.location.href = `signup.html?name=${encodeURIComponent(name)}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(password)}`;
+        window.location.replace(
+          `signup_page.html?name=${encodeURIComponent(
+            name
+          )}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(
+            password
+          )}`
+        );
 
         // Prevent form submission (we've handled it manually)
         return false;
