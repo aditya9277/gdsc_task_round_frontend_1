@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup Page</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      input {
+        width: calc(100% - 20px);
+        padding: 10px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      button {
+        background-color: #4caf50;
+        color: #fff;
+        cursor: pointer;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        font-size: 16px;
+      }
+
+      button:hover {
+        background-color: #45a049;
+      }
+
+      .confirmation-message {
+        margin-top: 20px;
+        font-size: 18px;
+        color: #4caf50;
+      }
+    </style>
+  </head>
+  <body>
+    <form onsubmit="return signUp()">
+      <h2>Complete Signup</h2>
+
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required />
+
+      <button type="submit">Sign Up</button>
+
+      <div class="confirmation-message" id="confirmationMessage"></div>
+    </form>
+
+    <script>
+      function signUp() {
+        // Get user details from the URL parameters
+        const params = new URLSearchParams(window.location.search);
+        const name = params.get("name") || "User";
+        const email = params.get("email") || "example@example.com";
+
+        // Display confirmation message
+        const confirmationMessage = document.getElementById(
+          "confirmationMessage"
+        );
+        confirmationMessage.innerHTML = `Welcome, ${name}! You've successfully signed up with email: ${email}.`;
+
+        // Prevent form submission (we've handled it manually)
+        return false;
+      }
+    </script>
+  </body>
+</html>
