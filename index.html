@@ -3,125 +3,161 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>User Registration Form</title>
-    <style>
-      body {
-        font-family: "Arial", sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        height: 100vh;
-      }
-
-      form {
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        width: 400px;
-      }
-
-      label {
-        display: block;
-        margin-bottom: 8px;
-      }
-
-      input,
-      button {
-        width: 100%;
-        padding: 10px;
-        margin-bottom: 16px;
-        box-sizing: border-box;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-      }
-
-      button {
-        background-color: #4caf50;
-        color: #fff;
-        cursor: pointer;
-      }
-
-      button:hover {
-        background-color: #45a049;
-      }
-
-      .social-buttons {
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .social-buttons button {
-        flex-grow: 1;
-        margin-right: 8px;
-      }
-    </style>
+    <title>User Profile Form</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha384-ezF5JWMqVf1E3xMYgclKT91P3Wfs5A3k+ADvq27qhhR+BzKRvE5S4m4gXJh2RZu7"
+      crossorigin="anonymous" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body>
-    <form>
-      <h2>User Registration</h2>
+  <body class="bg-pattern">
+    <svg preserveAspectRatio="xMidYMid slice" viewBox="10 10 80 80">
+      <defs>
+        <style>
+          @keyframes rotate {
+            0% {
+              transform: rotate(0deg);
+            }
+            100% {
+              transform: rotate(360deg);
+            }
+          }
+          .out-top {
+            animation: rotate 20s linear infinite;
+            transform-origin: 13px 25px;
+          }
+          .in-top {
+            animation: rotate 10s linear infinite;
+            transform-origin: 13px 25px;
+          }
+          .out-bottom {
+            animation: rotate 25s linear infinite;
+            transform-origin: 84px 93px;
+          }
+          .in-bottom {
+            animation: rotate 15s linear infinite;
+            transform-origin: 84px 93px;
+          }
+        </style>
+      </defs>
+      <path
+        fill="#9b5de5"
+        class="out-top"
+        d="M37-5C25.1-14.7,5.7-19.1-9.2-10-28.5,1.8-32.7,31.1-19.8,49c15.5,21.5,52.6,22,67.2,2.3C59.4,35,53.7,8.5,37-5Z" />
+      <path
+        fill="#f15bb5"
+        class="in-top"
+        d="M20.6,4.1C11.6,1.5-1.9,2.5-8,11.2-16.3,23.1-8.2,45.6,7.4,50S42.1,38.9,41,24.5C40.2,14.1,29.4,6.6,20.6,4.1Z" />
+      <path
+        fill="#00bbf9"
+        class="out-bottom"
+        d="M105.9,48.6c-12.4-8.2-29.3-4.8-39.4.8-23.4,12.8-37.7,51.9-19.1,74.1s63.9,15.3,76-5.6c7.6-13.3,1.8-31.1-2.3-43.8C117.6,63.3,114.7,54.3,105.9,48.6Z" />
+      <path
+        fill="#00f5d4"
+        class="in-bottom"
+        d="M102,67.1c-9.6-6.1-22-3.1-29.5,2-15.4,10.7-19.6,37.5-7.6,47.8s35.9,3.9,44.5-12.5C115.5,92.6,113.9,74.6,102,67.1Z" />
+    </svg>
 
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required />
+    <!-- <div class="links">
+      <a
+        href="https://github.c"
+        target="_blank"
+        >Github<img
+          class="icon"
+          src="https://ksenia-k.com/img/icons/link.svg"
+      /></a>
+    </div> -->
+    <div id="particles-js" class="absolute inset-0"></div>
+    <div class="flex items-center justify-center min-h-screen relative z-10">
+      <div
+        <div
+        class="container mx-auto bg-gradient-to-br from-blue-300 to-purple-300 p-8 rounded-lg shadow-lg text-gray-800 hover:shadow-xl transition duration-300">
+        >
+        <form id="userProfileForm" class="animated-form">
+          <h1 class="text-3xl font-semibold mb-6 text-center">
+            Create Your Profile
+          </h1>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required />
+          <!-- Basic User Information Section -->
+          <div class="form-section animated">
+            <label for="name"><span>Name</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="input focus:border-blue-300"
+              required />
+          </div>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="password" required />
+          <div class="form-section animated">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="input focus:border-blue-300"
+              required />
+          </div>
+          <div class="form-section animated">
+            <label for="email">Username</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              class="input focus:border-blue-300"
+              required />
+          </div>
+          <div class="form-section animated">
+            <label for="email">College Name</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              class="input focus:border-blue-300"
+              required />
+          </div>
+          <div class="form-section animated">
+            <label for="email">Your Review</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              class="input focus:border-blue-300"
+              required />
+          </div>
 
-      <label for="confirmPassword">Confirm Password:</label>
-      <input
-        type="password"
-        id="confirmPassword"
-        name="confirmPassword"
-        required />
+          <!-- Add more input fields as per your choice -->
 
-      <button type="submit">Register</button>
-
-      <div class="social-buttons">
-        <button onclick="signInWithFacebook()">Sign up with Facebook</button>
-        <button onclick="signInWithGoogle()">Sign up with Google</button>
+          <!-- Social Sign-Up Section -->
+          <div class="social-buttons flex justify-center space-x-6">
+            <button
+              type="button"
+              class="social-button google font-bold py-2 px-4 rounded-full transition duration-300"
+              onclick="socialSignUp('google')">
+              <i class="fab fa-google mr-2"></i> Google
+            </button>
+            <button
+              type="button"
+              class="social-button facebook font-bold py-2 px-4 rounded-full transition duration-300"
+              onclick="socialSignUp('facebook')">
+              <i class="fab fa-facebook-f mr-2"></i> Facebook
+            </button>
+            <!-- Add more social buttons as needed -->
+          </div>
+          <button
+            type="submit"
+            class="submit-button bg-green-500 hover:bg-green-600 font-bold py-2 px-4 rounded-full transition duration-300">
+            Create Profile
+          </button>
+        </form>
       </div>
-    </form>
-    <script>
-      function redirectToSignUpPage() {
-        // Get user details
-        const name = document.getElementById("name").value;
-        const email = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+    </div>
 
-        // Check if any field is empty
-        if (!name || !email || !password) {
-          alert("Please fill in all the fields.");
-          return false;
-        }
-
-        // Redirect to the signup page with user details
-        window.location.replace(
-          `signup.html?name=${encodeURIComponent(
-            name
-          )}&email=${encodeURIComponent(email)}&password=${encodeURIComponent(
-            password
-          )}`
-        );
-
-        // Prevent form submission (we've handled it manually)
-        return false;
-      }
-
-      function signInWithFacebook() {
-        alert("Signing up with Facebook");
-        // Add your Facebook sign-up logic here
-      }
-
-      function signInWithGoogle() {
-        alert("Signing up with Google");
-        // Add your Google sign-up logic here
-      }
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
