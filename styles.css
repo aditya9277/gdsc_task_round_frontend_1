@@ -1,4 +1,4 @@
-/* styles.css */
+
 body {
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     margin: 0;
@@ -23,12 +23,6 @@ form {
     flex-direction: column;
     overflow: hidden; 
 }
-/* Add this to your styles.css or in a style tag in the head of your HTML file */
-
-/* Adjust spacing between form sections and social buttons */
-.animated-form .form-section {
-    margin-bottom: 20px;
-}
 
 .animated-form .social-buttons {
     margin-top: 30px;
@@ -46,7 +40,7 @@ form {
     margin-right: 10px; /* Add margin to separate social buttons */
 }
 
-/* Pulse animation for social buttons on hover */
+
 .animated-form .social-button:hover {
     background-color: rgba(255, 255, 255, 0.4);
     animation: pulse 0.5s infinite;
@@ -67,7 +61,6 @@ form {
 .animated-form {
     animation: fadeInUp 0.8s ease-in-out;
 }
-/* Add this to your styles.css or in a style tag in the head of your HTML file */
 
 .animated-form .social-button.google {
     background-color: #dd4b39; /* Google button color */
@@ -159,9 +152,7 @@ button:hover {
     margin: 0 5px;
     transition: background-color 0.3s ease;
 }
-/* Add this to your styles.css or in a style tag in the head of your HTML file */
 
-/* Animation for the "Create Your Profile" text */
 @keyframes colorChange {
     0% { color: #178bd8; } /* Start color (coral) */
     60% { color: #9b00d3; } /* Middle color (teal) */
